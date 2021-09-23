@@ -1,20 +1,17 @@
 import PropTypes from "prop-types";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 // import { NavLinks } from "./NavLinks";
 
 const navLinks = [
-  {
-      name: "Home",
-      route: "/",
-  },
   {
       name: "About",
       route: "/about",
   },
   {
       name: "Portfolio",
-      route: "/portfolio",
+      route: "/projects",
   },
   {
       name: "Contact",
@@ -32,9 +29,11 @@ function Navbar(props) {
       <h1 className="text-2xl">Mike Champion</h1>
       <ul className="flex flex-row justify-end list-none gap-2">
         {navLinks.map((link, index) => (
-            <li key={index}>
-              <a href={link.route} className="underline">{link.name}</a>
-            </li>
+            <Link to={link.route} key={index}>
+                <li className="underline">
+                    {link.name}
+                </li>
+            </Link>
           ))}
       </ul>
       
