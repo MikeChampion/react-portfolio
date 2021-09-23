@@ -28,7 +28,7 @@ function Footer(props) {
   ];
 
   return (
-    <footer className="flex flex-row space-between justify-center items-center w-full gap-4 bg-blue-700 text-gray-100 py-4">
+    <footer className="flex flex-row space-between justify-center items-center w-full gap-4 bg-blue-700 text-gray-100 py-4 fixed bottom-0">
       <div className="flex justify-center w-10 list-none gap-4">
         {footerLinks.map((link, index) => (
             <button key={index}>
