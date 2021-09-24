@@ -32,7 +32,7 @@ function Footer(props) {
       <div className="flex justify-center w-10 list-none gap-4">
         {footerLinks.map((link, index) => (
             <button key={index}>
-              <a href={link.url} className="underline" target="_blank" rel="noreferrer"><i title={link.name} className={`ion-logo-${link.icon} text-2xl`}></i></a>
+              <a href={link.url} target="_blank" rel="noreferrer"><i title={link.name} className={`ion-logo-${link.icon} text-2xl`}></i></a>
             </button>
           ))}
       </div>
