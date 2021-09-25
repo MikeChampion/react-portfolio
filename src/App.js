@@ -4,7 +4,7 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Resume from "./components/Resume";
 import Footer from "./components/Footer";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <main className="flex flex-col justify-center items-center w-full">
             <Navbar />
             <Switch >
-                <Route path="/" exact component={About}></Route>
+                <Redirect exact from="/" to="/about"></Redirect>
                 <Route path="/about" component={About}></Route>
                 <Route path="/projects" component={Projects}></Route>
                 <Route path="/contact" component={Contact}></Route>
