@@ -7,9 +7,14 @@ module.exports = {
             'generator': "url('./images/generator.jpg')",
            }
     },
+    transitionDelay: {
+        '250': '250ms',
+       }
   },
   variants: {
-    extend: {},
+    extend: {
+        backgroundColor: ['active'],
+    },
   },
   plugins: [],
 }
