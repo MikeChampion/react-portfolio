@@ -4,23 +4,23 @@ function ContactForm({ contactName, contactEmail, contactMessage }) {
 
     
     return (
-        <div className="flex flex-col items-center p-4 mt-8 w-11/12 gap-4 bg-gray-300 rounded-xl">
-            <p>The CONTACT page</p>
-            <div className="flex flex-col items-start gap-4 w-11/12 md:w-3/4 font-bold">
-                <div className="flex gap-2">
+        <div className="flex flex-col items-center mt-8 w-11/12 gap-4">
+            <h2>Contact me</h2>
+            <form className="flex flex-col items-start gap-4 w-full md:w-3/5 lg:w-1/3 p-2 md:p-4 lg:p-8 font-bold bg-white border-gray-300 border-2 rounded ">
+                <div className="flex gap-2 w-full">
                     <label htmlFor={contactName}>Name:</label>
-                    <input type="text" name={contactName} id={contactName} />
+                    <input type="text" name={contactName} id={contactName} className="border-2 border-gray-300 w-full rounded" />
                 </div>
-                <div className="flex gap-2">
+                <div className="flex gap-2 w-full">
                     <label htmlFor={contactEmail}>Email:</label>
-                    <input type="text" name={contactEmail} id={contactEmail} className="ml-1" />
+                    <input type="text" name={contactEmail} id={contactEmail} className="border-2 border-gray-300 w-full rounded ml-1" />
                 </div>
-                <div className="flex flex-col gap-2">
-                    <label htmlFor={contactMessage}>Message:</label>
-                    <textarea rows="4" cols="38" name={contactMessage} id={contactMessage} className="md:ml-8" />
+                <div className="flex flex-col items-center gap-2">
+                    <label htmlFor={contactMessage} className="self-start">Message:</label>
+                    <textarea rows="4" cols="40" name={contactMessage} id={contactMessage} className="border-2 border-gray-300 w-full rounded md:ml-8" />
                 </div>
-                <button className="flex self-end md:self-center px-4 py-2 bg-blue-700 rounded text-gray-300">Submit</button>
-            </div>
+                <button type="submit" className="flex self-end md:self-center px-4 py-2 bg-blue-700 rounded text-gray-300">Submit</button>
+            </form>
         </div>
     )   
 }

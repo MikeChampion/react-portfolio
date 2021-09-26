@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 
 function Projects() {
     const projects = [
@@ -31,13 +30,15 @@ function Projects() {
             image: "generator",
         },
       ];
-       {/* <p> The PROJECTS page six projects including links to deployed app and github repo </p> */}
+       
     return (
         <div id="projectsContainer" className="flex flex-col md:flex-row md:flex-wrap items-center md:justify-evenly m-8 w-11/12 lg:w-5/6 gap-4">
+            <h2>My projects</h2>
+            {/* Images should be 750w x 400h x 72dpi */}
                 {projects.map((project, index) => (
                     <div key={index} className="projectTile relative flex flex-wrap border-1 border-blue-700 rounded-lg w-11/12 md:w-5/12 lg:w-1/4">
                         <img src="/images/generator.jpg" alt="" className="rounded-lg w-full" />
-                        <div className="projectOverlay flex flex-col gap-2 m-4 py-4 px-6 border-2 border-blue-900 lg:border-0 lg:m-0 lg:py-4 lg:px-6 lg:w-full lg:h-full lg:pl-10 lg:pt-12 bg-gray-200 bg-opacity-60 rounded-lg text-blue-900 absolute lg:opacity-0 lg:hover:opacity-100 lg:transition lg:delay-250">
+                        <div className="projectOverlay flex flex-col gap-2 m-4 py-4 px-6 border-2 border-blue-900 lg:border-0 lg:m-0 lg:py-4 lg:px-6 lg:w-full lg:h-full lg:pl-10 lg:pt-12 bg-gray-200 bg-opacity-60 rounded-lg text-blue-900 absolute lg:opacity-0 lg:hover:opacity-100 lg:transition lg:delay-150">
                             <div className="projectTitle flex flex-row items-end gap-2 lg:gap-4 font-bold">
                                 <a href={project.deployURL} className="underline md:text-md lg:text-lg" target="_blank" rel="noreferrer">
                                     {project.name}
