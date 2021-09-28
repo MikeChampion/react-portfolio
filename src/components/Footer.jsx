@@ -20,7 +20,6 @@ function Footer(props) {
         url: "https://stackoverflow.com/users/8723496/mike-champion",
         icon: "logo-stackoverflow",
     },
-    
   ];
 
   return (
