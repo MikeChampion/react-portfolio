@@ -1,40 +1,88 @@
-import PropTypes from "prop-types";
+import React, { useState } from 'react';
+import { validateEmail } from '../utils/helpers';
 
-function ContactForm({ contactName, contactEmail, contactMessage }) {
+function ContactForm() {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
+    const handleInputChange = (e) => {
+        const { target } = e;
+        const inputType = target.name;
+        const inputValue = target.value;
+
+        if (inputType === 'name') {
+            setName(inputValue);
+          } else if (inputType === 'email') {
+            setEmail(inputValue);
+          } else {
+            setMessage(inputValue);
+          }
+    };
+
+    const handleBlur = (e) => {
+        const { target } = e;
+        const inputType = target.name;
+        const inputValue = target.value;
+
+        if (!inputValue) {
+            setErrorMessage(`ERROR: ${inputType} cannot be blank`);
+        } else if (inputType === "email" && !validateEmail(email)) {
+            setErrorMessage(`Your email is invalid`);
+            return;
+        }
+    };
+
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+
+        if (!name) {
+            setErrorMessage('Name cannot be blank');
+            return;
+        }
+        if (!message) {
+            setErrorMessage('Message cannot be blank');
+            return;
+            }
+        if (!validateEmail(email)) {
+            setErrorMessage(`Your email is invalid`);
+            return;
+        }
     
+        // If everything passes, this clears out the input 
+        setName('');
+        setEmail('');
+        setMessage('');
+    };
+
     return (
-        <div className="flex flex-col items-center mt-8 w-11/12 gap-4">
-            <h2>Contact me</h2>
-            <form className="flex flex-col items-start gap-4 w-full md:w-3/5 lg:w-1/3 p-2 md:p-4 lg:p-8 font-bold bg-white border-gray-300 border-2 rounded ">
-                <div className="flex gap-2 w-full">
-                    <label htmlFor={contactName}>Name:</label>
-                    <input type="text" name={contactName} id={contactName} className="border-2 border-gray-300 w-full rounded" />
-                </div>
-                <div className="flex gap-2 w-full">
-                    <label htmlFor={contactEmail}>Email:</label>
-                    <input type="text" name={contactEmail} id={contactEmail} className="border-2 border-gray-300 w-full rounded ml-1" />
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                    <label htmlFor={contactMessage} className="self-start">Message:</label>
-                    <textarea rows="4" cols="40" name={contactMessage} id={contactMessage} className="border-2 border-gray-300 w-full rounded md:ml-8" />
-                </div>
-                <button type="submit" className="flex self-end md:self-center px-4 py-2 bg-blue-700 rounded text-gray-300">Submit</button>
-            </form>
+        <div className="flex flex-col items-center mt-8 w-11/12">
+            <h2 className="text-3xl font-bold">Contact me</h2> 
+            <div className="flex flex-col items-center mt-8 mb-20 w-11/12 lg:w-5/6 gap-4">
+                <form className="flex flex-col items-start gap-4 w-full md:w-3/5 lg:w-1/3 md:p-4 lg:p-8 font-bold bg-white border-gray-300 border-2 rounded ">
+                    <div className="flex gap-2 w-full">
+                        <label htmlFor={name}>Name:</label>
+                        <input id={name} value={name} name="name" onChange={handleInputChange} onBlur={handleBlur} type="email" className="border-2 border-gray-300 w-full rounded" />
+                    </div>
+                    <div className="flex gap-2 w-full">
+                        <label htmlFor={email}>Email:</label>
+                        <input id={email} value={email} name="email" onChange={handleInputChange} onBlur={handleBlur} type="email" className="border-2 border-gray-300 w-full rounded ml-1" />
+                    </div>
+                    <div className="flex flex-col items-center gap-2">
+                        <label htmlFor={message} className="self-start">Message:</label>
+                        <textarea rows="4" cols="40" name="message" id={message} value={message} onChange={handleInputChange} onBlur={handleBlur} className="border-2 border-gray-300 w-full rounded md:ml-8" />
+                    </div>
+                    <button type="button"  onClick={handleFormSubmit} className="flex self-end md:self-center px-4 py-2 bg-blue-700 rounded text-gray-300">Submit</button>
+                </form>
+                {errorMessage && (
+                    <div>
+                    <p className="text-red-400">{errorMessage}</p>
+                    </div>
+                )}
+            </div>
         </div>
     )   
-}
-
-{/* Form with fields for name, an email address, and a message
-                WHEN I move my cursor out of one of the form fields without entering text
-                THEN I receive a notification that this field is required
-                WHEN I enter text into the email address field
-                THEN I receive a notification if I have entered an invalid email address */}
-
-ContactForm.propTypes = {
-    contactName: PropTypes.string.isRequired,
-    contactEmail: PropTypes.string.isRequired,
-    contactMessage: PropTypes.string.isRequired,
 }
 
 export default ContactForm
