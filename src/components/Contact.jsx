@@ -14,10 +14,13 @@ function ContactForm() {
 
         if (inputType === 'name') {
             setName(inputValue);
+            setErrorMessage("");
           } else if (inputType === 'email') {
             setEmail(inputValue);
+            setErrorMessage("");
           } else {
             setMessage(inputValue);
+            setErrorMessage("");
           }
     };
 
