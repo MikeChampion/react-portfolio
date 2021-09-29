@@ -13,6 +13,17 @@
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
+  "devDependencies": {
+    "@craco/craco": "^6.3.0",
+    "@tailwindcss/forms": "^0.3.3",
+    "autoprefixer": "^9.8.6",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "gh-pages": "^3.2.3",
+    "postcss": "^7.0.36",
+    "prettier": "^2.4.1",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.14"
+  },
   "scripts": {
     "start": "craco start",
     "build": "craco build",
@@ -46,16 +57,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@craco/craco": "^6.3.0",
-    "@tailwindcss/forms": "^0.3.3",
-    "autoprefixer": "^9.8.6",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "gh-pages": "^3.2.3",
-    "postcss": "^7.0.36",
-    "prettier": "^2.4.1",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.14"
   }
 }
