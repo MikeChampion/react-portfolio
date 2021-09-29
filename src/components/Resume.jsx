@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 function Resume() {
     const front = ["HTML5", "CSS3", "TailwindCSS", "Responsive WWeb Design", "Accessibility Testing", "JavaScript", "ES6", "React", "jQuery", "Bootstrap", "Github", "Npm", "WebPack", "Chrome DevTools"];
     const back = ["NodeJS", 'Express', "MySQL", "MySQL Workbench", "MongoDB", "MongoDB Compass", "MongoDB Atlas", "Jest", "Mongoose", "Apollo", "Java", "Python", "Spring", "Django"];
-    const other = []
 
     return (
         <div className="flex flex-col items-center mt-8 w-11/12">
