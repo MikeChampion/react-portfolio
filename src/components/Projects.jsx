@@ -1,7 +1,14 @@
 import PropTypes from "prop-types";
 
+import fitness from "../images/fitness.jpg";
+import techBlog from "../images/techBlog.jpg";
+import empTracker from "../images/empTracker.png";
+import teamBuilder from "../images/teamBuilder.png";
+import weather from "../images/weather.jpg";
+import generator from "../images/generator.jpg";
+
 function Projects() {
-    {/* Images should be 750w x 400h x 72dpi */}
+    // Images should be 750w x 400h x 72dpi
     const projects = [
         {
             name: "Fitness Tracker",
@@ -9,7 +16,7 @@ function Projects() {
             icon: "logo-github",
             deployURL: "https://frozen-dusk-31622.herokuapp.com/",
             stack: "HTML, CSS, NodeJS, Express, Morgan, MySQL",
-            image: "fitness.jpg"
+            image: fitness
         },
         {
             name: "Tech Blog",
@@ -17,7 +24,7 @@ function Projects() {
             icon: "logo-github",
             deployURL: "https://fierce-scrubland-84529.herokuapp.com/",
             stack: "HTML, CSS, Handlebars, NodeJS, Express, MySQL",
-            image: "techBlog.jpg"
+            image: techBlog
         },
         {
             name: "Employee Tracker",
@@ -25,7 +32,7 @@ function Projects() {
             icon: "play-circle-outline",
             deployURL: "https://watch.screencastify.com/v/jyvtj5KVKoF1fjMzUNSB",
             stack: "NodeJS, MySQL",
-            image: "empTracker.png"
+            image: empTracker
         },
         {
             name: "Team Builder",
@@ -33,7 +40,7 @@ function Projects() {
             icon: "play-circle-outline",
             deployURL: "https://watch.screencastify.com/v/woGBJdJ9EAjG5RZ8fgFL",
             stack: "HTML, CSS, NodeJS, Inquirer, Jest",
-            image: "teamBuilder.png"
+            image: teamBuilder
         },
         {
             name: "Weather App",
@@ -41,7 +48,7 @@ function Projects() {
             icon: "logo-github",
             deployURL: "https://mikechampion.github.io/weather-app/",
             stack: "HTML, CSS, JS, OpenWeatherMap API",
-            image: "weather.jpg"
+            image: weather
         },
         {
             name: "Password Generator",
@@ -49,7 +56,7 @@ function Projects() {
             icon: "logo-github",
             deployURL: "https://mikechampion.github.io/Password_Generator/",
             stack: "HTML, CSS, JS",
-            image: "generator.jpg"
+            image: generator
         },
       ];
        
@@ -59,7 +66,7 @@ function Projects() {
         <div id="projectsContainer" className="flex flex-col md:flex-row md:flex-wrap items-center md:justify-evenly mt-8 mb-20 w-11/12 lg:w-5/6 gap-4">
                 {projects.map((project, index) => (
                     <div key={index} className="projectTile relative flex flex-wrap border border-blue-700 rounded-lg w-11/12 md:w-5/12 lg:w-1/4">
-                        <img src={`./images/${project.image}`} alt="" className="rounded-lg w-full" />
+                        <img src={project.image} alt="" className="rounded-lg w-full" />
                         <div className="projectOverlay flex flex-col gap-2 m-4 md:m-2 py-4 px-6 border-2 border-blue-900 lg:border-0 lg:m-0 lg:py-4 lg:px-6 lg:w-full lg:h-full lg:pl-10 lg:pt-12 bg-gray-100 bg-opacity-60 rounded-lg text-blue-900 absolute lg:opacity-0 lg:hover:opacity-100 lg:transition lg:delay-150">
                             <div className="projectTitle flex flex-row justify-start items-center gap-2 lg:gap-4 font-bold">
                                 <a href={project.deployURL} className="underline text-base md:text-lg lg:text-xl" target="_blank" rel="noreferrer">
