@@ -8,7 +8,7 @@ const navLinks = [
       route: "/about",
   },
   {
-      name: "Portfolio",
+      name: "Projects",
       route: "/projects",
   },
   {
