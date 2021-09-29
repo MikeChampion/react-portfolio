@@ -12,7 +12,7 @@ function App() {
         <main className="flex flex-col justify-center items-center w-full">
             <Navbar />
             <Switch >
-                <Redirect exact from="/" to="/about"></Redirect>
+                <Redirect exact from="/react-portfolio" to="/about"></Redirect>
                 <Route path="/about" component={About}></Route>
                 <Route path="/projects" component={Projects}></Route>
                 <Route path="/contact" component={Contact}></Route>
